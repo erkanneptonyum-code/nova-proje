@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#11111d">
+    <meta name="description" content="Bugün ne oynasam? Tercihlerini seç, sana uygun oyun türünü keşfet.">
+    <title>Oyun Arıyorum — Bugün Ne Oynasam?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#game">Mini oyuna geç</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Oyun Arıyorum ana sayfa"><span class="brand-icon">✳</span><span>oyun<span>arıyorum</span></span></a>
+      <a class="header-link" href="#how-it-works">Nasıl çalışır? <span aria-hidden="true">↘</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-glow glow-one"></div><div class="hero-glow glow-two"></div>
+        <div class="hero-content">
+          <div class="live-pill"><span></span> OYUN MODU AÇIK</div>
+          <h1 id="hero-title">Bugün<br>ne <span>oynasam?</span></h1>
+          <p>Modunu seç, birkaç soruyu cevapla. Sana göre oyun türünü birlikte bulalım.</p>
+          <a class="primary-button" href="#game">Oyunumuzu başlat <span aria-hidden="true">↓</span></a>
+          <div class="hero-footnote"><span aria-hidden="true">✦</span> Sadece birkaç seçim · Hesap açmak yok</div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-ring ring-one"></div><div class="visual-ring ring-two"></div>
+          <div class="game-orb"><div class="orb-face"><span class="orb-eye eye-left"></span><span class="orb-eye eye-right"></span><span class="orb-smile"></span></div><span class="orb-spark spark-top">✦</span><span class="orb-spark spark-side">✧</span></div>
+          <div class="float-chip chip-action"><span>⚡</span> Aksiyon</div>
+          <div class="float-chip chip-cozy"><span>☁</span> Rahatla</div>
+          <div class="float-chip chip-puzzle"><span>◈</span> Bulmaca</div>
+          <div class="visual-caption">SENİN SIRADAKİ MACERAN<br><b>BURADA BAŞLIYOR</b></div>
+        </div>
+        <div class="hero-bottom"><span>01 / OYUNUNU KEŞFET</span><span>KEŞFET · SEÇ · OYNA</span></div>
+      </section>
+
+      <section class="game-section" id="game" aria-labelledby="game-title">
+        <div class="section-wrap">
+          <div class="section-intro">
+            <div><p class="section-kicker">MİNİ OYUN <span>✳</span></p><h2 id="game-title">Nasıl bir oyun<br>arıyorsun?</h2></div>
+            <p>İçinden geldiği gibi seç.<br>Yanlış cevap diye bir şey yok.</p>
+          </div>
+
+          <div class="quiz-card" id="quiz-card">
+            <div class="quiz-topline">
+              <div class="progress-label"><span id="step-label">SORU 01</span><span class="progress-divider">/</span><span>03</span></div>
+              <div class="progress-track" role="progressbar" aria-label="Mini oyun ilerlemesi" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1"><span id="progress-fill"></span></div>
+              <span class="progress-percent" id="progress-percent">33%</span>
+            </div>
+            <div id="question-area" aria-live="polite"></div>
+            <div class="quiz-controls"><button class="back-button" id="back-button" type="button" hidden>← Geri</button><span class="select-hint" id="select-hint">Bir seçenek belirle</span><button class="next-button" id="next-button" type="button" disabled>Devam et <span aria-hidden="true">→</span></button></div>
+          </div>
+          <div class="quiz-decoration decor-left" aria-hidden="true">✳</div><div class="quiz-decoration decor-right" aria-hidden="true">✦</div>
+
+          <div class="surprise-row"><div class="surprise-icon">🎲</div><div><strong>Karar veremiyor musun?</strong><span>Şansına bir oyun türü seçelim.</span></div><button type="button" id="surprise-button">Sürpriz yap <span aria-hidden="true">↗</span></button></div>
+        </div>
+      </section>
+
+      <section class="arcade-section" id="arcade-game" aria-labelledby="arcade-title">
+        <div class="section-wrap arcade-wrap">
+          <div class="arcade-intro">
+            <p class="section-kicker">MİNİ OYUN SALONU <span>✦</span></p>
+            <h2 id="arcade-title">Hangisini<br><span>oynayalım?</span></h2>
+            <p>Üç mini oyundan birini seç. Refleksini dene, hafızanı çalıştır ya da bilgisayara karşı oyna.</p>
+            <p class="arcade-status" id="arcade-status" aria-live="polite">Bir oyun seç ve hemen başla!</p>
+          </div>
+          <div class="game-console">
+            <div class="game-tabs" role="tablist" aria-label="Mini oyun seç">
+              <button class="game-tab is-active" type="button" role="tab" id="tab-star" aria-selected="true" aria-controls="panel-star" data-game="star">⭐ <span>Yıldız yakala</span></button>
+              <button class="game-tab" type="button" role="tab" id="tab-memory" aria-selected="false" aria-controls="panel-memory" tabindex="-1" data-game="memory">🧠 <span>Hafıza</span></button>
+              <button class="game-tab" type="button" role="tab" id="tab-rps" aria-selected="false" aria-controls="panel-rps" tabindex="-1" data-game="rps">✊ <span>Taş-kağıt</span></button>
+            </div>
+            <div class="arcade-panel" id="panel-star" role="tabpanel" aria-labelledby="tab-star">
+              <div class="arcade-machine">
+                <div class="arcade-machine-top"><span><i></i> YILDIZ AVCISI</span><span>1 OYUNCU</span></div>
+                <div class="arcade-board" id="arcade-board" aria-label="Yıldız yakalama oyun alanı">
+                  <div class="board-orbit orbit-a"></div><div class="board-orbit orbit-b"></div>
+                  <button class="star-target" id="star-target" type="button" aria-label="Yıldızı yakala" hidden>★</button>
+                  <span class="board-hint" id="board-hint">BAŞLAMAK İÇİN<br>OYUNU BAŞLAT</span>
+                </div>
+                <div class="arcade-scoreboard">
+                  <div><span>PUAN</span><strong id="arcade-score">00</strong></div>
+                  <div><span>KALAN SÜRE</span><strong><span id="arcade-time">20</span><small> sn</small></strong></div>
+                  <div><span>REKORUN</span><strong id="arcade-best">00</strong></div>
+                </div>
+                <button class="primary-button arcade-start" id="arcade-start" type="button">Oyuna başla <span aria-hidden="true">→</span></button>
+              </div>
+            </div>
+            <div class="arcade-panel" id="panel-memory" role="tabpanel" aria-labelledby="tab-memory" hidden>
+              <div class="arcade-machine">
+                <div class="arcade-machine-top"><span><i></i> HAFIZA EŞLEŞTİRME</span><span>4 ÇİFT</span></div>
+                <p class="memory-instruction">Aynı sembolleri bul. Mümkün olduğunca az hamle yap!</p>
+                <div class="memory-grid" id="memory-grid" aria-label="Hafıza kartları"></div>
+                <div class="memory-bottom"><span id="memory-status" aria-live="polite">Başlamak için yeni oyun'a bas.</span><span>HAMLE <b id="memory-moves">00</b></span></div>
+                <button class="primary-button mini-game-button" id="memory-start" type="button">Yeni oyun <span aria-hidden="true">↻</span></button>
+              </div>
+            </div>
+            <div class="arcade-panel" id="panel-rps" role="tabpanel" aria-labelledby="tab-rps" hidden>
+              <div class="arcade-machine rps-machine">
+                <div class="arcade-machine-top"><span><i></i> TAŞ · KAĞIT · MAKAS</span><span>VS. BİLGİSAYAR</span></div>
+                <div class="rps-score"><div><span>SEN</span><strong id="rps-player-score">0</strong></div><b>:</b><div><span>BİLGİSAYAR</span><strong id="rps-computer-score">0</strong></div></div>
+                <p class="rps-status" id="rps-status" aria-live="polite">Hamleni seç, bakalım kim kazanacak?</p>
+                <div class="rps-options" aria-label="Hamleni seç">
+                  <button type="button" class="rps-choice" data-choice="rock"><span>✊</span><strong>Taş</strong></button>
+                  <button type="button" class="rps-choice" data-choice="paper"><span>✋</span><strong>Kağıt</strong></button>
+                  <button type="button" class="rps-choice" data-choice="scissors"><span>✌️</span><strong>Makas</strong></button>
+                </div>
+                <button class="reset-score" id="rps-reset" type="button">Skoru sıfırla ↻</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-section" id="how-it-works">
+        <div class="section-wrap how-wrap"><div><p class="section-kicker">ÇOK BASİT <span>✳</span></p><h2>Üç seçim.<br><span>Yeni bir fikir.</span></h2></div>
+          <div class="how-steps"><article><span class="step-number">01</span><div class="how-icon icon-purple">☻</div><h3>Modunu söyle</h3><p>Hareket mi, keşif mi, huzur mu?</p></article><article><span class="step-number">02</span><div class="how-icon icon-orange">◷</div><h3>Zamanını seç</h3><p>Kısa bir mola mı, uzun bir macera mı?</p></article><article><span class="step-number">03</span><div class="how-icon icon-blue">✦</div><h3>Önerini keşfet</h3><p>Sana uygun türlere göz at.</p></article></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="brand" href="#top"><span class="brand-icon">✳</span><span>oyun<span>arıyorum</span></span></a><p>Bir sonraki favorin belki de bir tık uzağında.</p><a class="back-top" href="#top">Yukarı çık ↑</a></footer>
+
+    <dialog class="result-dialog" id="result-dialog" aria-labelledby="result-title">
+      <button class="dialog-close" type="button" aria-label="Pencereyi kapat">×</button>
+      <div class="result-confetti" aria-hidden="true"><span>✦</span><span>✳</span><span>✧</span><span>✦</span><span>✧</span></div>
+      <p class="result-kicker" id="result-kicker">SANA GÖRE OYUN TÜRÜ</p>
+      <div class="result-emoji" id="result-emoji" aria-hidden="true">🧭</div>
+      <h2 id="result-title">Keşif ve macera</h2>
+      <p class="result-description" id="result-description"></p>
+      <div class="example-box"><span>ŞUNLARA GÖZ ATABİLİRSİN</span><p id="result-examples"></p></div>
+      <div class="result-actions"><button class="primary-button" id="play-again" type="button">Yeniden dene <span aria-hidden="true">↻</span></button><button class="share-button" id="copy-result" type="button">Sonucu kopyala <span aria-hidden="true">⎘</span></button></div>
+      <p class="copy-status" id="copy-status" aria-live="polite"></p>
+    </dialog>
+  </body>
+</html>
